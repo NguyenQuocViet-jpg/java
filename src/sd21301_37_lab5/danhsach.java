@@ -9,11 +9,12 @@ public class danhsach {
     
     public void inputSP(Scanner sc)
     {
-        sanpham sp = new sanpham();
         System.out.print("Số Lượng Sản Phẩm Muốn Nhập: ");
         int n = sc.nextInt();
         sc.nextLine();
         for(int i = 0; i < n; i++){
+            sanpham sp = new sanpham();
+            System.out.println("--- Nhập Sản Phẩm thứ " + (i + 1) + " ---");
             sp.input(sc);
             danhSach.add(sp);
         }
