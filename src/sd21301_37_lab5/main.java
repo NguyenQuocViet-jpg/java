@@ -62,6 +62,7 @@ public class main {
                     }
                 }while(k != 1);
             }
+            System.out.println("\n". repeat(50));
         }while(chucnang != 0);
     }
 }
