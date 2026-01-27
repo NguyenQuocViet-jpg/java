@@ -32,21 +32,20 @@ public class lab4 {
 
         //cách 2 
 
-        // System.out.print("Bạn muốn nhập bao nhiêu sản phẩm: ");
-        // int n = sc.nextInt();
-        // sc.nextLine();
-        // sanpham taphoa[] = new sanpham[n];
-        // for(int i = 0; i < taphoa.length; i++){
-        //     taphoa[i] = new sanpham();
-        //     System.out.println("Nhập sản phẩm thứ " + (i + 1));
-        //     taphoa[i].input(sc);
-        // }
-
-        // System.out.printf("%-30s | %-12s | %-12s | %-10s \n", "Tên", "Đơn Giá", "Giảm Giá", "Thuế");
-        // System.out.println("-------------------------------------------------------------------");
-        // for(int i = 0; i < taphoa.length; i ++){
-        //     taphoa[i].print();
-        // }
-
+//        System.out.print("Bạn muốn nhập bao nhiêu sản phẩm: ");
+//        int n = sc.nextInt();
+//        sc.nextLine();
+//        sanpham taphoa[] = new sanpham[n];
+//        for(int i = 0; i < taphoa.length; i++){
+//            taphoa[i] = new sanpham();
+//            System.out.println("Nhập sản phẩm thứ " + (i + 1));
+//            taphoa[i].input(sc);
+//        }
+//
+//        System.out.printf("%-30s | %-12s | %-12s | %-10s \n", "Tên", "Đơn Giá", "Giảm Giá", "Thuế");
+//        System.out.println("-------------------------------------------------------------------");
+//        for(int i = 0; i < taphoa.length; i ++){
+//            taphoa[i].print();
+//        }
     }
 }
