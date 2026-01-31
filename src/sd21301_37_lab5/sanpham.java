@@ -71,8 +71,8 @@ public class sanpham {
         giamGia = sc.nextDouble();
         sc.nextLine();
     }
+    
     public void print(){
-        
         System.out.printf("%-15s | %-12.2f | %-12.2f | %.2f \n", Ten, donGia, giamGia, ThueNK());
     }
 }
