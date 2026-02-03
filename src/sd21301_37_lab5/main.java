@@ -63,8 +63,8 @@ public class main {
                     System.out.print("Nhập Tên Sản Phẩm Muốn Xóa: ");
                     String tensp = "";
                     tensp = sc.nextLine();
-                    
-                    sp.deleteSP(tensp, sc);
+                    String s = tensp.trim();
+                    sp.deleteSP(s, sc);
                 break;
                 case 6: 
                     System.out.println("-----------------------------------------------");
@@ -95,11 +95,18 @@ public class main {
             if(chucnang != 0){
                 System.out.println("-----------------------------------------------");
                 System.out.println("Vui Lòng Bấm Phím 1 Để Quay Lại Menu.");
-                int k;
+                int k = 0;
                 do{
-                    k = sc.nextInt();
-                    if(k != 1 ){
+                    try{
+                        k = sc.nextInt();
+                        sc.nextLine();
+                        break;
+                    }catch (Exception e){
                         System.out.println("-----------------------------------------------");
+                        sc.nextLine();
+                    }
+                    if(k != 1 ){
+                        
                         System.out.println("Phím Nhập Không Đúng. \nVui Lòng Bấm Phím 1 Để Quay Lại Menu.");
                     }
                 }while(k != 1);

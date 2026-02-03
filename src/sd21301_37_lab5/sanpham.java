@@ -62,7 +62,7 @@ public class sanpham {
 
     public void input(Scanner sc){
         System.out.print("Tên sản phẩm: ");
-        Ten = sc.nextLine();
+        Ten = sc.nextLine().trim();
 
         while(true){
             try{
@@ -85,9 +85,7 @@ public class sanpham {
                 System.out.println("Vui Lòng Nhập Số.");
                 sc.nextLine();
             }
-        }
-
-                
+        }      
     }
     
     public void print(){
