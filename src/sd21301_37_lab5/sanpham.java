@@ -64,12 +64,30 @@ public class sanpham {
         System.out.print("Tên sản phẩm: ");
         Ten = sc.nextLine();
 
-        System.out.print("Đơn giá: ");
-        donGia = sc.nextDouble();
+        while(true){
+            try{
+                System.out.print("Đơn giá: ");
+                donGia = sc.nextDouble();
+                sc.nextLine();
+                break;
+            }catch(Exception e){
+                System.out.println("Vui Lòng Nhập Số.");
+                sc.nextLine();
+            }
+        }
+        while(true){
+            try{
+                System.out.print("Giảm Giá: ");
+                giamGia = sc.nextDouble();
+                sc.nextLine();
+                break;
+            }catch(Exception e){
+                System.out.println("Vui Lòng Nhập Số.");
+                sc.nextLine();
+            }
+        }
 
-        System.out.print("Giảm Giá: ");
-        giamGia = sc.nextDouble();
-        sc.nextLine();
+                
     }
     
     public void print(){

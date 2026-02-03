@@ -9,9 +9,19 @@ public class danhsach {
     
     public void inputSP(Scanner sc)
     {
-        System.out.print("Số Lượng Sản Phẩm Muốn Nhập: ");
-        int n = sc.nextInt();
-        sc.nextLine();
+        
+        int n;
+        while(true){
+            try{
+                System.out.print("Số Lượng Sản Phẩm Muốn Nhập: ");
+                n = sc.nextInt();
+                sc.nextLine();
+                break;
+            }catch(Exception e){
+                System.out.println("Vui Lòng Nhập Số.");
+                sc.nextLine();
+            }
+        }
         for(int i = 0; i < n; i++){
             sanpham sp = new sanpham();
             System.out.println("--- Nhập Sản Phẩm thứ " + (i + 1) + " ---");
@@ -38,13 +48,20 @@ public class danhsach {
         }
         return -1;
     }
-    public void deleteSP(String tensp)
+    public void deleteSP(String tensp, Scanner sc)
     {
         int index = timkiemSP(tensp);
         if(index < 0){
             System.out.println("Không tìm thấy sản phẩm trong danh sách");
         }else{
-            danhSach.remove(index);
+            System.out.print("Bạn có Muốn Xóa Không(Y/N)");
+            String c = "";
+            c = sc.nextLine();
+            if(c.toLowerCase().equals("y")){
+                danhSach.remove(index);
+                System.out.println("Đã Xóa Thành Công.");
+            }
+            
         }
     }
     public void ThemSP(int vitri, Scanner sc)

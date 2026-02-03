@@ -20,7 +20,6 @@ public class main {
         System.out.println("|    Chức Năng 8: Xuất Danh Sách Sản Phẩm Trên Giá Trung Bình.            |");
         System.out.println("|    Chức Năng 0: Thoát Chương Trình.                                     |");
         System.out.println("+=========================================================================+");
-        System.out.print("Chức Năng: ");
     }
     public static void main(String[] args) {
         System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
@@ -30,8 +29,17 @@ public class main {
         int chucnang;
         do{
             MENU();
-            chucnang = sc.nextInt();
-            sc.nextLine();
+            while(true){
+                try{
+                    System.out.print("Chức Năng: ");
+                    chucnang = sc.nextInt();
+                    sc.nextLine();
+                    break;
+                }catch(Exception e){
+                    System.out.println("Vui Lòng Nhập Số!");
+                    sc.nextLine();
+                }
+            }
             switch(chucnang){
                 case 1:
                     System.out.println("-----------------------------------------------");
@@ -55,20 +63,23 @@ public class main {
                     System.out.print("Nhập Tên Sản Phẩm Muốn Xóa: ");
                     String tensp = "";
                     tensp = sc.nextLine();
-                    System.out.print("Bạn có Muốn Xóa Không(Y/N)");
-                    String c = "";
-                    c = sc.nextLine();
-                    if(c.toLowerCase().equals("y")){
-                        sp.deleteSP(tensp);
-                        System.out.println("Đã Xóa Thành Công.");
-                    }
                     
+                    sp.deleteSP(tensp, sc);
                 break;
                 case 6: 
                     System.out.println("-----------------------------------------------");
-                    System.out.print("Vị Trí Muốn Thêm Sản Phẩm: ");
-                    int b = sc.nextInt();
-                    sc.nextLine();
+                    int b;
+                    while(true){
+                        try{
+                        System.out.print("Vị Trí Muốn Thêm Sản Phẩm: ");
+                        b = sc.nextInt();
+                        sc.nextLine();
+                        break;
+                    }catch(Exception e){
+                        System.out.println("Vui Lòng Nhập Số.");
+                        sc.nextLine();
+                    }
+                    }
                     sp.ThemSP(b, sc);
                 break;
                 case 8:
