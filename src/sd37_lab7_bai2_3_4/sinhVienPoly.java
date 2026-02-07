@@ -24,20 +24,21 @@ abstract public class sinhVienPoly {
     public sinhVienPoly() {
     }
 
-    public sinhVienPoly(String hoten) {
-        this.hoten = hoten;
+    public sinhVienPoly(String Nganh) {
+        this.Nganh = Nganh;
     }
+
 
     public sinhVienPoly(String Nganh, String hoten) {
         this.Nganh = Nganh;
         this.hoten = hoten;
     }
-    abstract public float getdiemtb();
+    abstract public double getdiemtb();
     abstract public void inputsv();
     abstract public void printsv();
     
     public String getHocLuc(){
-        float dtb = getdiemtb();
+        double dtb = getdiemtb();
         if(dtb >= 9) return "Xuất Sắc";
         else if(dtb >=8 ) return "Giỏi";
         else if(dtb >= 6.5) return "Khá";
