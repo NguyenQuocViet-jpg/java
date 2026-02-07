@@ -7,56 +7,21 @@ import java.util.Scanner;
 
 public class assignment {
     static void MENU(){
-        System.out.println("+====================================================+");
-        System.out.println("|                       MENU                         |");
-        System.out.println("+====================================================+");
-        System.out.println("|    Chức Năng 1: Nhập Thông Tin Sản Phẩm.           |");
-        System.out.println("|    Chức Năng 2: Hiển Thị Thông Tin Sản Phẩm.       |");
-        System.out.println("|    Chức Năng 3: Tính Tiền Hóa Đơn.                 |");
-        System.out.println("|    Chức Năng 4: Cập Nhật THông Tin Sản Phẩm.       |");
-        System.out.println("|    Chức Năng 5: Nhập Sản Phẩm.                     |");
-        System.out.println("|    Chức Năng 6: Tìm Kiếm Sản Phẩm.                 |");
-        System.out.println("|    Chức Năng 7: Xóa Sản Phẩm.                      |");
-        System.out.println("|    Chức Năng 8: Sắp Xếp Sản Phẩm Theo Tên.         |");
-        System.out.println("|    Chức Năng 9: Xây Dựng Lớp Sản Phẩm Tiêu Dùng.   |");
-        System.out.println("|    Chức Năng 0: Nhập Thông Tin Sản Phẩm.           |");
-        System.out.println("+====================================================+");
+        System.out.println("+===========================================================================+");
+        System.out.println("|                                    MENU                                   |");
+        System.out.println("+===========================================================================+");
+        System.out.println("|    Chức Năng 1: Nhập danh sách nhân viên từ bàn phím.                     |");
+        System.out.println("|    Chức Năng 2: Xuất danh sách nhân viên ra màn hình.                     |");
+        System.out.println("|    Chức Năng 3: Tìm và hiển thị nhân viên theo mã nhập từ bàn phím.       |");
+        System.out.println("|    Chức Năng 4: Xóa nhân viên theo mã nhập từ bàn phím.                   |");
+        System.out.println("|    Chức Năng 5: Cập nhật thông tin nhân viên theo mã nhập từ bàn phím .   |");
+        System.out.println("|    Chức Năng 6: Tìm các nhân viên theo khoảng lương nhập từ bàn phím.     |");
+        System.out.println("|    Chức Năng 7: Sắp xếp nhân viên theo họ và tên.                         |");
+        System.out.println("|    Chức Năng 8: Sắp xếp nhân viên theo thu nhập.                          |");
+        System.out.println("|    Chức Năng 9: Xuất 5 nhân viên có thu nhập cao nhất.                    |");
+        System.out.println("|    Chức Năng 0: Nhập Thông Tin Sản Phẩm.                                  |");
+        System.out.println("+===========================================================================+");
         System.out.print("Chức Năng: ");
-    }
-    static void cn1(){
-        System.out.println("Chức Năng 1: Nhập Thông Tin Sản Phẩm.");
-    }
-    
-    static void cn2(){
-        System.out.println("Chức Năng 2: Hiển Thị Thông Tin Sản Phẩm.");
-    }
-    
-    static void cn3(){
-        System.out.println("Chức Năng 3: Tính Tiền Hóa Đơn.");
-    }
-    
-    static void cn4(){
-        System.out.println("Chức Năng 4: Cập Nhật THông Tin Sản Phẩm.");
-    }
-    
-    static void cn5(){
-        System.out.println("Chức Năng 5: Nhập Sản Phẩm.");
-    }
-    
-    static void cn6(){
-        System.out.println("Chức Năng 6: Tìm Kiếm Sản Phẩm.");
-    }
-    
-    static void cn7(){
-        System.out.println("Chức Năng 7: Xóa Sản Phẩm.");
-    }
-    
-    static void cn8(){
-        System.out.println("Chức Năng 8: Sắp Xếp Sản Phẩm Theo Tên.");
-    }
-    
-    static void cn9(){
-        System.out.println("Chức Năng 9: Xây Dựng Lớp Sản Phẩm Tiêu Dùng.");
     }
     
     public static void main(String[] args) {
@@ -72,39 +37,39 @@ public class assignment {
             switch(chuc_nang){
                 case 1:
                     System.out.println("-----------------------------------------------");
-                    cn1();
+                    
                 break;
                 case 2:
                     System.out.println("-----------------------------------------------");
-                    cn2();
+                    
                 break;
                 case 3: 
                     System.out.println("-----------------------------------------------");
-                    cn3();
+                    
                 break;
                 case 4: 
                     System.out.println("-----------------------------------------------");
-                    cn4();
+                    
                 break;
                 case 5: 
                     System.out.println("-----------------------------------------------");
-                    cn5();
+                    
                 break;
                 case 6: 
                     System.out.println("-----------------------------------------------");
-                    cn6();
+                     
                 break;
                 case 7:
                     System.out.println("-----------------------------------------------");
-                    cn7();
+                    
                 break;
                 case 8:
                     System.out.println("-----------------------------------------------");
-                    cn8();
+                    
                 break;
                 case 9:
                     System.out.println("-----------------------------------------------");
-                    cn9();
+                    
                 break;
                 case 0:
                     System.out.println("-----------------------------------------------");
