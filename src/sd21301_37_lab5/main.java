@@ -26,7 +26,7 @@ public class main {
         Scanner sc = new Scanner(System.in);
         
         danhsach sp = new danhsach();
-        int chucnang;
+        int chucnang; 
         do{
             MENU();
             while(true){
@@ -60,11 +60,10 @@ public class main {
                 break;
                 case 5: 
                     System.out.println("-----------------------------------------------");
+                    sp.printSP(sc);
+                    System.out.println("-------------------------------------------------------------------");
                     System.out.print("Nhập Tên Sản Phẩm Muốn Xóa: ");
-                    String tensp = "";
-                    tensp = sc.nextLine();
-                    String s = tensp.trim();
-                    sp.deleteSP(s, sc);
+                    sp.deleteSP();
                 break;
                 case 6: 
                     System.out.println("-----------------------------------------------");
@@ -82,6 +81,11 @@ public class main {
                     }
                     sp.ThemSP(b, sc);
                 break;
+                case 7:
+                    System.out.println("-----------------------------------------------");
+                    sp.printSP(sc);
+                    sp.chinhSuaSP();
+                    break;
                 case 8:
                     System.out.println("-----------------------------------------------");
                     sp.giaTrentb();

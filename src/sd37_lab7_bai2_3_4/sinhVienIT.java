@@ -8,12 +8,12 @@ public class sinhVienIT extends sinhVienPoly{
     private double diemhtml;
     private double diemcss;
 
-    public double getDiẹmava() {
+    public double getDiejmava() {
         return diemjava;
     }
 
-    public void setDiẹmava(double diẹmava) {
-        this.diemjava = diẹmava;
+    public void setDiemjava(double diemjava) {
+        this.diemjava = diemjava;
     }
 
     public double getDiemhtml() {
@@ -39,27 +39,60 @@ public class sinhVienIT extends sinhVienPoly{
         super(Nganh);
     }
 
-    public sinhVienIT(double diẹmava, double diemhtml, double diemcss, String Nganh, String hoten) {
+    public sinhVienIT(double diẹejmava, double diemhtml, double diemcss, String Nganh, String hoten) {
         super(Nganh, hoten);
-        this.diemjava = diẹmava;
+        this.diemjava = diemjava;
         this.diemhtml = diemhtml;
         this.diemcss = diemcss;
     }
+    
     @Override public double getdiemtb(){
         return (2*diemjava + diemhtml + diemcss)/4;
     }
+    
     @Override public void inputsv(){
     Scanner sc = new Scanner(System.in);
         System.out.print("Nhập Họ và Tên: ");
-        setHoten(sc.nextLine());
-        System.out.print("Nhập Điểm CSS: ");
-        diemcss = sc.nextDouble();
-        System.out.print("Nhập Điểm HTML: ");
-        diemhtml = sc.nextDouble();
-        System.out.print("Nhập Điểm Java: ");
-        diemjava = sc.nextDouble();
+        setHoten(sc.nextLine().trim());
+        
+        while(true){
+            try{
+                System.out.print("Nhập Điểm CSS: ");
+                diemcss = sc.nextDouble();
+                sc.nextLine();
+                break;
+            }catch(Exception e){
+                System.out.println("Vui Lòng Nhập Số.");
+                sc.nextLine();
+            }
+        }
+        
+        while(true){
+            try{
+                System.out.print("Nhập Điểm HTML: ");
+                diemhtml = sc.nextDouble();
+                sc.nextLine();
+                break;
+            }catch(Exception e){
+                System.out.println("Vui Lòng Nhập Số.");
+                sc.nextLine();
+            }
+        }
+        
+        while(true){
+            try{
+                System.out.print("Nhập Điểm Java: ");
+                diemjava = sc.nextDouble();
+                sc.nextLine();
+                break;
+            }catch(Exception e){
+                System.out.println("Vui Lòng Nhập Số.");
+                sc.nextLine();
+            }
+        } 
     }
+    
     @Override public void printsv(){
-        System.out.printf(" %-10S | %20s | %-4.2f | %-4.2f | %-4.2f | %-4.2f | %-10s\n", getNganh(), getHoten(), diemcss, diemhtml, diemjava, getdiemtb(), getHocLuc());
+        System.out.printf(" %-10S | %-20s | %-10.2f | %-10.2f | %-10.2f | %-10.2f | %-10s\n", getNganh(), getHoten(), diemcss, diemhtml, diemjava, getdiemtb(), getHocLuc());
     }
 }

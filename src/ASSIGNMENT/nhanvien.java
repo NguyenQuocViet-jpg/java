@@ -41,6 +41,10 @@ abstract public class nhanvien {
     public nhanvien() {
     }
 
+    public nhanvien(String loainv) {
+        this.loainv = loainv;
+    }
+
     public nhanvien(String manv, String hoten, double luong) {
         this.manv = manv;
         this.hoten = hoten;

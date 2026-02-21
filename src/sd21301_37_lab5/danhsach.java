@@ -9,7 +9,7 @@ public class danhsach {
     
     public void inputSP(Scanner sc)
     {
-        
+         
         int n;
         while(true){
             try{
@@ -37,8 +37,10 @@ public class danhsach {
             x.print();
         }
     }
-    public int timkiemSP(String tensp)
+    public int timkiemSP()
     {
+        Scanner sc = new Scanner(System.in);
+        String tensp = sc.nextLine().trim();
         int index = -1;
         for(int i = 0; i < danhSach.size(); i++)
         {
@@ -48,15 +50,15 @@ public class danhsach {
         }
         return -1;
     }
-    public void deleteSP(String tensp, Scanner sc)
+    public void deleteSP()
     {
-        int index = timkiemSP(tensp);
+        Scanner sc = new Scanner(System.in);
+        int index = timkiemSP();
         if(index < 0){
             System.out.println("Không tìm thấy sản phẩm trong danh sách");
         }else{
             System.out.print("Bạn có Muốn Xóa Không(Y/N)");
-            String c = "";
-            c = sc.nextLine();
+            String c = sc.nextLine();
             if(c.toLowerCase().equals("y")){
                 danhSach.remove(index);
                 System.out.println("Đã Xóa Thành Công.");
@@ -70,16 +72,17 @@ public class danhsach {
         sp.input(sc);
         if(vitri > danhSach.size())
             danhSach.add(sp);
-        else 
+        else
             danhSach.add(vitri,sp);
     }
     public void sapXepgiam(){
-        for(int i = 0; i < danhSach.size(); i++){
-            for(int j = 0; j < danhSach.size() - 1 - i; j++){
-                sanpham sp1 = danhSach.get(j);
-                sanpham sp2 = danhSach.get(j + 1);
+        for(int i = 0; i < danhSach.size() - 1; i++){
+            for(int j = i + 1; j < danhSach.size(); j++){
+                sanpham sp1 = danhSach.get(i);
+                sanpham sp2 = danhSach.get(j);
                 if(sp1.getdonGia() < sp2.getdonGia()){
-                    Collections.swap(danhSach, j, j + 1);
+                    Collections.swap(danhSach, i, j);
+                    sp1 = danhSach.get(i);
                 }
             }
         }
@@ -98,6 +101,46 @@ public class danhsach {
             sanpham sp = danhSach.get(i);
             if(sp.getdonGia() > trungBinhGia()){
                 sp.print();
+            }
+        }
+    }
+    public void chinhSuaSP(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Tên Sản Phẩm Muốn Sửa: ");
+        int index = timkiemSP();
+        if(index < 0) System.out.println("Không Tìm Thấy Sản Phẩm Này.");
+        else{
+            sanpham moi = danhSach.get(index);
+            System.out.println("Bạn Muốn Thay Đổi Thông Tin Nào (Tên Sản Phẩm | Giá Sản Phẩm | Giảm Giá)");
+            String sp = sc.nextLine().trim();
+            if(sp.toLowerCase().equals("tên sản phẩm")){
+                System.out.print("Nhập Tên Mới: ");
+                moi.setTen(sc.nextLine().trim());
+            }else if(sp.toLowerCase().equals("giá sản phẩm")){
+                while(true){
+                    try{
+                        System.out.print("Nhập Giá mới Của Sản Phẩm: ");
+                        moi.setdonGia(sc.nextDouble());
+                        sc.nextLine();
+                        break;
+                    }catch(Exception e){
+                        System.out.println("Vui Lòng Nhập Số.");
+                        sc.nextLine();
+                    }
+                } 
+                
+            }else if(sp.toLowerCase().equals("giảm giá")){
+                while(true){
+                    try{
+                        System.out.print("Nhập Mức Giảm Mới Của Sản Phẩm: ");
+                        moi.setgiamGia(sc.nextDouble());
+                        sc.nextLine();
+                        break;
+                    }catch(Exception e){
+                        System.out.println("Vui Lòng Nhập Số.");
+                        sc.nextLine();
+                    }
+                } 
             }
         }
     }

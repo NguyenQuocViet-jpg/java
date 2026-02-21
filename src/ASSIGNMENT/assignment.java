@@ -27,6 +27,7 @@ public class assignment {
     public static void main(String[] args) {
         System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
         Scanner sc = new Scanner(System.in);
+        dsNhanVien nv = new dsNhanVien();
         
         int chuc_nang;
         do{
@@ -37,11 +38,17 @@ public class assignment {
             switch(chuc_nang){
                 case 1:
                     System.out.println("-----------------------------------------------");
-                    
+                    do{
+                        nv.inputds();
+                        System.out.println("Bạn có muốn nhập nhân viên có chức vụ khác không(Y/N)");
+                        String n = sc.nextLine();
+                        if(n.toLowerCase().equals("n"))
+                            break;
+                    }while(true);
                 break;
                 case 2:
                     System.out.println("-----------------------------------------------");
-                    
+                    nv.printds();
                 break;
                 case 3: 
                     System.out.println("-----------------------------------------------");
@@ -91,6 +98,7 @@ public class assignment {
                     }
                 }while(k != 1);
             }
+            System.out.println("\n". repeat(50));
         }while(chuc_nang != 0);
     }
 }

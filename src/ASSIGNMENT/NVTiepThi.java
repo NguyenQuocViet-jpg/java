@@ -31,6 +31,10 @@ public class NVTiepThi extends nhanvien{
         this.huehong = hueHong;
     }
     
+    public NVTiepThi(String loaiNV){
+        super(loaiNV);
+    }
+    
     @Override public double thuNhap(){
         return getLuong() + doanhso * huehong;
     }
@@ -48,6 +52,7 @@ public class NVTiepThi extends nhanvien{
         setHuehong(sc.nextDouble()/100);
     }
     @Override public void xuat(){
-        System.out.printf("%-10s | %-20s | %-10f | %-10f | %-10f | %-10f\n", getManv(), getHoten(), getDoanhso(), getHuehong(), getLuong(), thuNhap());
+        System.out.printf("%-12s | %-20s | %-10.2f | %-10.2f | %-10.2f | %-10.2f | %-10.2f\n"
+                , getManv(), getHoten(), getDoanhso(), getHuehong(), getLuong(), thuNhap(), thueTN());
     }
 }

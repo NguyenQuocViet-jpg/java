@@ -42,13 +42,34 @@ public class sinhVienBiz extends sinhVienPoly{
     @Override public void inputsv(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập Họ và Tên: ");
-        setHoten(sc.nextLine());
-        System.out.print("Nhập Điểm marketing: ");
-        diemMarKeting = sc.nextDouble();
-        System.out.print("Nhập Điểm Sale: ");
-        diemSale = sc.nextDouble();
+        setHoten(sc.nextLine().trim());
+        
+        while(true){
+            try{
+                System.out.print("Nhập Điểm marketing: ");
+                diemMarKeting = sc.nextDouble();
+                sc.nextLine();
+                break;
+            }catch(Exception e){
+                System.out.println("Vui Lòng Nhập Số.");
+                sc.nextLine();
+            }
+        } 
+        
+        while(true){
+            try{
+                System.out.print("Nhập Điểm Sale: ");
+                diemSale = sc.nextDouble();
+                sc.nextLine();
+                break;
+            }catch(Exception e){
+                System.out.println("Vui Lòng Nhập Số.");
+                sc.nextLine();
+            }
+        } 
     }
+    
     @Override public void printsv(){
-        System.out.printf(" %-10S | %20s | %-4.2f | %-4.2f | %-4.2f | %-10s\n", getNganh(), getHoten(), diemMarKeting, diemSale, getdiemtb(), getHocLuc());
+        System.out.printf(" %-10S | %-20s | %-10.2f | %-10.2f | %-10.2f | %-10s\n", getNganh(), getHoten(), diemMarKeting, diemSale, getdiemtb(), getHocLuc());
     }
 }
