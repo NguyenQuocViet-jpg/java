@@ -21,7 +21,7 @@ public class assignment {
         System.out.println("|    Chức Năng 9: Xuất 5 nhân viên có thu nhập cao nhất.                    |");
         System.out.println("|    Chức Năng 0: Nhập Thông Tin Sản Phẩm.                                  |");
         System.out.println("+===========================================================================+");
-        System.out.print("Chức Năng: ");
+        
     }
     
     public static void main(String[] args) {
@@ -32,8 +32,20 @@ public class assignment {
         int chuc_nang;
         do{
             MENU();
-            chuc_nang = sc.nextInt();
-            sc.nextLine();
+            
+            while(true){
+                try{
+                    System.out.print("Chức Năng: ");
+                    chuc_nang = sc.nextInt();
+                    sc.nextLine();
+                    break;
+                }catch(Exception e){
+                    System.out.println("Vui lòng nhập số");
+                    sc.nextLine();
+                }
+            }
+            
+            
             
             switch(chuc_nang){
                 case 1:
@@ -52,31 +64,46 @@ public class assignment {
                 break;
                 case 3: 
                     System.out.println("-----------------------------------------------");
-                    
+                    int index = nv.TimKiemNV();
+                    if(index < 0){
+                        System.out.println("Không tìm thấy nhân viên này.");
+                    }else{
+                        nhanvien tim = nv.ds.get(index);
+                        tim.xuat(); 
+                    }
                 break;
                 case 4: 
                     System.out.println("-----------------------------------------------");
-                    
+                    do{
+                        nv.delete();
+                        System.out.println("Bạn muốn xóa người khác nữa không (Y/N)");
+                        String y = "";
+                        y = sc.nextLine();
+                        if(y.toLowerCase().equals("n"))
+                            break;
+                    }while(true);
                 break;
                 case 5: 
                     System.out.println("-----------------------------------------------");
-                    
+                    nv.ChinhSua();
                 break;
                 case 6: 
                     System.out.println("-----------------------------------------------");
-                     
+                     nv.timKiemtheoLuong();
                 break;
                 case 7:
                     System.out.println("-----------------------------------------------");
-                    
+                    nv.sapXepHoTen();
+                    nv.print();
                 break;
                 case 8:
                     System.out.println("-----------------------------------------------");
-                    
+                    nv.sapXepthunhap();
+                    nv.print();
                 break;
                 case 9:
                     System.out.println("-----------------------------------------------");
-                    
+                    nv.xuat5thunhap();
                 break;
                 case 0:
                     System.out.println("-----------------------------------------------");

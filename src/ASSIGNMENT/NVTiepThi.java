@@ -44,12 +44,44 @@ public class NVTiepThi extends nhanvien{
         setManv(sc.nextLine());
         System.out.print("Nhập tên nhân viên: ");
         setHoten(sc.nextLine());
-        System.out.print("Nhập lương nhân viên: ");
-        setLuong(sc.nextDouble());
-        System.out.print("Nhập doanh số: ");
-        setDoanhso(sc.nextDouble());
-        System.out.print("Nhập huê hồng (%): ");
-        setHuehong(sc.nextDouble()/100);
+        
+        
+        while(true){
+            try{
+                System.out.print("Nhập lương nhân viên: ");
+                setLuong(sc.nextDouble());
+                sc.nextLine();
+                break;
+            }catch (Exception e){
+                System.out.println("Vui lòng nhập số");
+                sc.nextLine();
+            }
+        }
+        
+        while(true){
+            try{
+                System.out.print("Nhập doanh số: ");
+                setDoanhso(sc.nextDouble());
+                sc.nextLine();
+                break;
+            }catch (Exception e){
+                System.out.println("Vui lòng nhập số");
+                sc.nextLine();
+            }
+        }
+         
+        while(true){
+            try{
+                System.out.print("Nhập huê hồng (%): ");
+                setHuehong(sc.nextDouble()/100);
+                sc.nextLine();
+                break;
+            }catch (Exception e){
+                System.out.println("Vui lòng nhập số");
+                sc.nextLine();
+            }
+        }
+        
     }
     @Override public void xuat(){
         System.out.printf("%-12s | %-20s | %-10.2f | %-10.2f | %-10.2f | %-10.2f | %-10.2f\n"

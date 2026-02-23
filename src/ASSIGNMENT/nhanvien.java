@@ -58,7 +58,6 @@ abstract public class nhanvien {
     public double thueTN(){
         double tn = thuNhap();
         if(tn < 9000000){
-            System.out.println("Không Cần Đóng Thuế.");
             return 0;
         }else if(tn <= 15000000){
             return tn * 0.1;
