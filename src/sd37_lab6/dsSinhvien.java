@@ -108,7 +108,7 @@ public class dsSinhvien {
                 
                 String eMail;
                 do{
-                    System.out.print("Nhập Email: ");
+                    System.out.print("Nhập Email mới: ");
                     eMail = sc.nextLine().trim();
                     if(!moi.kiemTraEmail(eMail))
                         System.out.println("Bạn nhập không đúng định dạng email,\nVui lòng nhập lại.");
@@ -117,7 +117,7 @@ public class dsSinhvien {
             }else if(sua.equalsIgnoreCase("sdt")){
                 String sDt;
                 do{
-                    System.out.print("Nhập SĐT: ");
+                    System.out.print("Nhập SĐT mới: ");
                     sDt = sc.nextLine().trim();
                     if(!moi.kiemTraSDT(sDt))
                         System.out.println("Bạn nhập không đúng đinh dạng số điện thoại,\nVui lòng nhập lại.");
@@ -126,7 +126,7 @@ public class dsSinhvien {
             }else if(sua.equalsIgnoreCase("cccd")){
                 String cCcd;
                 do{
-                    System.out.print("Nhập CCCD: ");
+                    System.out.print("Nhập CCCD mới: ");
                     cCcd = sc.nextLine().trim();
                     if(!moi.kiemTraCCCD(cCcd))
                         System.out.println("Bạn nhập không đúng của định dạng CCCD,\nVui lòng nhập lại.");
