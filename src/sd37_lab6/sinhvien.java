@@ -7,7 +7,13 @@ public class sinhvien {
     private String ten;
     private String masv;
     private float diem;
-
+    private String email;
+    private String sdt;
+    private String cccd;
+    private String Email = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+    private String SDT = "^0\\d{9}$";
+    private String CCCD = "^\\d{12}$";
+    
     public String getTen() {
         return ten;
     }
@@ -32,6 +38,32 @@ public class sinhvien {
         this.diem = diem;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSdt() {
+        return sdt;
+    }
+
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
+    }
+
+    public String getCccd() {
+        return cccd;
+    }
+
+    public void setCccd(String cccd) {
+        this.cccd = cccd;
+    }
+
+    
+
     public sinhvien() {
     }
 
@@ -46,6 +78,18 @@ public class sinhvien {
         else if(getDiem() < 7.5) return "Khá";
         else if(getDiem() < 9) return "Giỏi";
         else return "Xuất sắc";
+    }
+    
+    public boolean kiemTraEmail(String email) {
+        return email.matches(Email);
+    }
+
+    public boolean kiemTraSDT(String sdt) {
+        return sdt.matches(SDT);
+    }
+
+    public boolean kiemTraCCCD(String cccd) {
+        return cccd.matches(CCCD);
     }
     
     public void input(){
@@ -65,9 +109,35 @@ public class sinhvien {
                 sc.nextLine();
             }
         }
+        String eMail;
+        do{
+            System.out.print("Nhập Email: ");
+            eMail = sc.nextLine().trim();
+            if(!kiemTraEmail(eMail))
+                System.out.println("Bạn nhập không đúng định dạng email,\nVui lòng nhập lại.");
+        }while(!kiemTraEmail(eMail));
+        setEmail(eMail);
+        
+        String sDt;
+        do{
+            System.out.print("Nhập SĐT: ");
+            sDt = sc.nextLine().trim();
+            if(!kiemTraSDT(sDt))
+                System.out.println("Bạn nhập không đúng đinh dạng số điện thoại,\nVui lòng nhập lại.");
+        }while(!kiemTraSDT(sDt));
+        setSdt(sDt);
+        
+        String cCcd;
+        do{
+            System.out.print("Nhập CCCD: ");
+            cCcd = sc.nextLine().trim();
+            if(!kiemTraCCCD(cCcd))
+                System.out.println("Bạn nhập không đúng của định dạng CCCD,\nVui lòng nhập lại.");
+        }while(!kiemTraCCCD(cCcd));
+        setCccd(cCcd);
     }
-    
+
     public void print(){
-        System.out.printf("%-10s | %-25s | %-5.2f | %s\n", getMasv(), getTen(), getDiem(), hocluc());
+        System.out.printf("%-10s | %-25s | %-5.2f | %-10s | %-12s | %-12s | %s\n", getMasv(), getTen(), getDiem(), hocluc(), getSdt(), getCccd(), getEmail());
     }
 }

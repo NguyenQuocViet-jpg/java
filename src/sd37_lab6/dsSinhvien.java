@@ -13,7 +13,7 @@ public class dsSinhvien {
         ds.add(sv);
     }
     public void printsv(){
-        System.out.printf("%-10s | %-25s | %-5s | %s\n", "Mã SV", "Họ và Tên", "Điểm", "Học lực");
+        System.out.printf("%-10s | %-25s | %-5s | %10s| %-12s | %-12s | %s\n", "Mã SV", "Họ và Tên", "Điểm", "Học lực", "CCCD", "SĐT", "Email");
         System.out.println("-------------------------------------------------------------------");
         for(sinhvien f: ds){
             f.print();
@@ -84,7 +84,7 @@ public class dsSinhvien {
         if(index < 0) System.out.println("Không tìm thấy sinh viên này.");
         else{
             sinhvien moi = ds.get(index);
-            System.out.println("Bạn muốn chỉnh sửa thông tin nào ( Mã | Tên | Điểm )");
+            System.out.println("Bạn muốn chỉnh sửa thông tin nào ( Mã | Tên | Điểm | Email | SDT | CCCD)");
             String sua = sc.nextLine().trim();
             if(sua.equalsIgnoreCase("mã")){
                 System.out.print("Nhập mã mới: ");
@@ -104,6 +104,34 @@ public class dsSinhvien {
                         sc.nextLine();
                     }
                 }
+            }else if(sua.equalsIgnoreCase("email")){
+                
+                String eMail;
+                do{
+                    System.out.print("Nhập Email: ");
+                    eMail = sc.nextLine().trim();
+                    if(!moi.kiemTraEmail(eMail))
+                        System.out.println("Bạn nhập không đúng định dạng email,\nVui lòng nhập lại.");
+                }while(!moi.kiemTraEmail(eMail));
+                moi.setEmail(eMail);
+            }else if(sua.equalsIgnoreCase("sdt")){
+                String sDt;
+                do{
+                    System.out.print("Nhập SĐT: ");
+                    sDt = sc.nextLine().trim();
+                    if(!moi.kiemTraSDT(sDt))
+                        System.out.println("Bạn nhập không đúng đinh dạng số điện thoại,\nVui lòng nhập lại.");
+                }while(!moi.kiemTraSDT(sDt));
+                moi.setSdt(sDt);
+            }else if(sua.equalsIgnoreCase("cccd")){
+                String cCcd;
+                do{
+                    System.out.print("Nhập CCCD: ");
+                    cCcd = sc.nextLine().trim();
+                    if(!moi.kiemTraCCCD(cCcd))
+                        System.out.println("Bạn nhập không đúng của định dạng CCCD,\nVui lòng nhập lại.");
+                }while(!moi.kiemTraCCCD(cCcd));
+                moi.setCccd(cCcd);
             }else{
                 System.out.println("Không tìm thấy thông tin mà bạn muốn sửa.");
             }

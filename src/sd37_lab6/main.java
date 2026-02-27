@@ -20,9 +20,9 @@ public class main {
             System.out.println("|    Chức Năng 2: Hiển Thị Danh Sách Vừa Nhập.                              |");
             System.out.println("|    Chức Năng 3: Xuất Điểm trung Bình Của Sinh Viên.                       |");
             System.out.println("|    Chức Năng 4: Sắp Xếp Giảm Dần Theo Điểm Sinh Viên Và Xuất Danh Sách.   |");
-            System.out.println("|    Chức Năng 5: Tìm và Xóa Họ Tên Nhập Từ Bàn Phím.                       |");
+            System.out.println("|    Chức Năng 5: Tìm và Xóa Sinh Viên Nhập Từ Bàn Phím.                    |");
             System.out.println("|    Chức Năng 6: Thêm Một Sinh viên Tại Vị Trí.                            |");
-            System.out.println("|    Chức Năng 7: Cập Nhật Thông Tin Sinh Viên Theo Tên.                    |");
+            System.out.println("|    Chức Năng 7: Cập Nhật Thông Tin Sinh Viên Theo Mã.                     |");
             System.out.println("|    Chức Năng 8: Xuất Danh Sách Sinh viên Trên Điểm Trung Bình.            |");
             System.out.println("|    Chức Năng 0: Thoát Chương Trình.                                       |");
             System.out.println("+===========================================================================+");
