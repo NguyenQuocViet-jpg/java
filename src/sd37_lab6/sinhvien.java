@@ -98,17 +98,7 @@ public class sinhvien {
         setMasv(sc.nextLine().trim());
         System.out.print("Nhập họ và tên: ");
         setTen(sc.nextLine().trim());
-        while(true){
-            try{
-                System.out.print("Nhập điểm: ");
-                setDiem(sc.nextFloat());
-                sc.nextLine();
-                break;
-            }catch (Exception e){
-                System.out.println("Vui lòng nhập số");
-                sc.nextLine();
-            }
-        }
+        
         String eMail;
         do{
             System.out.print("Nhập Email: ");
@@ -135,6 +125,18 @@ public class sinhvien {
                 System.out.println("Bạn nhập không đúng của định dạng CCCD,\nVui lòng nhập lại.");
         }while(!kiemTraCCCD(cCcd));
         setCccd(cCcd);
+        
+        while(true){
+            try{
+                System.out.print("Nhập điểm: ");
+                setDiem(sc.nextFloat());
+                sc.nextLine();
+                break;
+            }catch (Exception e){
+                System.out.println("Vui lòng nhập số");
+                sc.nextLine();
+            }
+        }
     }
 
     public void print(){
